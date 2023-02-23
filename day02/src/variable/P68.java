@@ -10,10 +10,6 @@ public class P68 {
 		int a = 10;
 		System.out.println(s2 + a);
 
-		int n1 = 10;
-		String n2 = String.valueOf(n1);
-		// String n2 = n1+"";
-
 		Random r = new Random();
 		int rndNum = r.nextInt(45)+1;
 		System.out.println(rndNum);
