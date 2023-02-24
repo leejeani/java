@@ -6,6 +6,8 @@ public class Hello {
 		// TODO Auto-generated method stub
 		int a = 10;
 		int b = 100;
+		int dddd = 100;
+		int cc = 100;
 	}
 
 }
