@@ -7,7 +7,7 @@ public class Hello {
 		int a = 10;
 		int b = 100;
 		int dddd = 100;
-		int cc = 100;
+		int cc = 100; 
 	}
 
 }
