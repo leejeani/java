@@ -8,6 +8,10 @@ public class Hello {
 		int b = 100;
 		int dddd = 100;
 		int cc = 100; 
+		
+		int kkk = 100;
+		
+		int aaaaa = 100;
 	}
 
 }
