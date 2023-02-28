@@ -6,11 +6,14 @@ public class Car {
 	public int size;
 	
 	// 생성자. (constructor)
+	
+	
 	public Car() {
 		this.name = "k1";
 		this.color = "red";
 		this.size = 1000;
 	}
+	
 	public Car(String name, String color, int size) {
 		this.name = name;
 		this.color = color;
