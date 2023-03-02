@@ -12,6 +12,7 @@ public class Calculator {
 		result = a + b;
 		return result;
 	}
+	
 	public int sum(int a, int b, int c) {
 		int result = 0;
 		result = a + b + c;
