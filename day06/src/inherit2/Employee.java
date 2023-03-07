@@ -1,6 +1,6 @@
 package inherit2;
 
-public class Employee {
+public class Employee{
 	private String id;
 	private String name;
 	private double salary;
