@@ -6,7 +6,20 @@ public class Account {
 	private String accHolder;
 	private double balance;
 	// Constructor - 음수 예외 상황
-	
+	public Account() {
+		
+	}
+
+	public Account(String accNo, String name, String accHolder, double balance) throws Exception {
+		if(balance < 0) {
+			throw new Exception();
+		}
+		this.accNo = accNo;
+		this.name = name;
+		this.accHolder = accHolder;
+		this.balance = balance;
+	}
+
 	// 계좌 정보 조회 
 	
 	// 잔액 조회 
