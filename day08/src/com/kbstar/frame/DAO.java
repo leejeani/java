@@ -6,7 +6,6 @@ public interface DAO<K,V> {
 	public void insert(V v);
 	public void delete(K k);
 	public void update(V v);
-	
 	default void connect() {
 		System.out.println(IP+" 에 접속 하였습니다.");
 	}
