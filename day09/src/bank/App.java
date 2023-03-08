@@ -12,6 +12,12 @@ public class App {
 				System.out.println("Bye");
 				break;
 			}else if(cmd.equals("c")) {
+				try {
+					Account a = new Account("11", "11", "11", -10);
+				} catch (Exception e) {
+					System.out.println(e.getMessage());
+					e.printStackTrace();
+				}
 				
 			}
 		}

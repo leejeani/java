@@ -12,7 +12,7 @@ public class Account {
 
 	public Account(String accNo, String name, String accHolder, double balance) throws Exception {
 		if(balance < 0) {
-			throw new Exception();
+			throw new Exception("A001");
 		}
 		this.accNo = accNo;
 		this.name = name;

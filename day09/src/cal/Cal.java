@@ -13,7 +13,7 @@ public class Cal {
 	public static double div(double a, double b) throws InfitinyException, Exception {
 		double result = 0.0;
 		if(b == 0.0) {
-			throw new InfitinyException("B0001");
+			throw new Exception("B0001");
 		}
 		result = a / b;
 		return result;
