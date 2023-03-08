@@ -17,7 +17,6 @@ public class ItemService implements Service<Integer, ItemDTO>, SearchService {
 	@Override
 	public void register(ItemDTO v) throws Exception {
 		System.out.println(v+"Data Check..");
-
 		try {
 			dao.insert(v);
 		} catch (Exception e) {
