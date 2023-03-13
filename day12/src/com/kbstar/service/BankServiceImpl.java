@@ -85,8 +85,7 @@ implements BankService<UserDTO, AccountDTO, TransactionDTO, String, String> {
 
 	@Override
 	public List<TransactionDTO> getAllTr(String acc) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return transactionDao.search(acc);
 	}
 
 	@Override
@@ -116,8 +115,7 @@ implements BankService<UserDTO, AccountDTO, TransactionDTO, String, String> {
 
 	@Override
 	public List<AccountDTO> getAllAccount(String k) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return accountDao.search(k);
 	}
 
 }
