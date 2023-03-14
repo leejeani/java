@@ -10,4 +10,5 @@ public interface DAO<K1,K2,V> {
 	public List<V> selectAll() throws Exception;
 	
 	public List<V> search(K2 k) throws Exception;
+	
 }

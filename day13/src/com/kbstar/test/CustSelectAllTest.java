@@ -14,9 +14,14 @@ public class CustSelectAllTest {
 		List<Cust> list = null;
 		try {
 			list = crudService.get();
-			for(Cust obj: list) {
-				System.out.println(obj);
+			if(list.size() == 0) {
+				System.out.println("데이터가 없습니다.");
+			}else {
+				for(Cust obj: list) {
+					System.out.println(obj);
+				}
 			}
+			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

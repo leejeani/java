@@ -32,7 +32,7 @@ public class SelectTest {
 		
 		try(Connection con = DriverManager.getConnection(url, id, pwd); 
 				PreparedStatement pstmt = con.prepareStatement(selectSql);) {
-			pstmt.setString(1, "id3");
+			pstmt.setString(1, "id05");
 			
 			try(ResultSet rset = pstmt.executeQuery()){
 				rset.next();

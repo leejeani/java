@@ -97,55 +97,46 @@ public class CustDaoImpl implements DAO<String, String, Cust> {
 	public Cust select(String k) throws Exception {
 		Cust cust = null;
 		try(Connection con = getConnection(); 
-				PreparedStatement pstmt = con.prepareStatement(Sql.selectSql);) {
+				PreparedStatement pstmt = con.prepareStatement(Sql.selectSql)) {
 			pstmt.setString(1, k);
 			
-			try(ResultSet rset = pstmt.executeQuery()){
+			try(ResultSet rset = pstmt.executeQuery()) {
 				rset.next();
-				String db_id = rset.getString("id");
-				String db_pwd = rset.getString("pwd");
+				String id = rset.getString("id");
+				String pwd = rset.getString("pwd");
 				String name = rset.getString("name");
 				int age = rset.getInt("age");
-				cust = new Cust(db_id, db_pwd, name, age);
-				 
+				cust = new Cust(id, pwd, name, age);
 			}catch(Exception e) {
 				throw e;
 			}
-
-		} catch (Exception e1) {
-			throw e1;
-		} 
+		}catch(Exception e) {
+			throw e;
+		}
 		return cust;
 	}
 
 	@Override
 	public List<Cust> selectAll() throws Exception {
-		List<Cust> list = new ArrayList<Cust>();
+		List<Cust> list = new ArrayList<>();
 		try(Connection con = getConnection(); 
 				PreparedStatement pstmt = con.prepareStatement(Sql.selectAllSql);) {
-			
-			try(ResultSet rset = pstmt.executeQuery()){
+			try(ResultSet rset = pstmt.executeQuery();) {
 				while(rset.next()) {
 					Cust cust = null;
-					String db_id = rset.getString("id");
-					String db_pwd = rset.getString("pwd");
+					String id = rset.getString("id");
+					String pwd = rset.getString("pwd");
 					String name = rset.getString("name");
 					int age = rset.getInt("age");
-					cust = new Cust(db_id, db_pwd, name, age);
+					cust = new Cust(id, pwd, name, age);
 					list.add(cust);
-				}
+				}				
+			}catch(Exception e) {
 				
-			}catch(SQLException e) {
-				e.printStackTrace();
 			}
-			
-			if(list.size() == 0) {
-				throw new Exception("없음");
-			}
-		} catch (Exception e1) {
-			throw e1;
-		} 
-		
+		}catch(Exception e) {
+			throw e;
+		}
 		return list;
 	}
 

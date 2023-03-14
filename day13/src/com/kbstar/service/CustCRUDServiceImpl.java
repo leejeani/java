@@ -74,12 +74,11 @@ public class CustCRUDServiceImpl implements CRUDService<String, Cust>{
 			cust = dao.select(k);
 		}catch(Exception e) {
 			if(e instanceof SQLRecoverableException) {
-				throw new Exception("시스템 장애");
+				throw new Exception("시스템 장애 입니다.");
 			}else {
-				throw new Exception("조회 내용이 없습니다.");
+				throw new Exception("ID가 존재 하지 않습니다.");
 			}
 		}
-		
 		return cust;
 	}
 
@@ -90,13 +89,15 @@ public class CustCRUDServiceImpl implements CRUDService<String, Cust>{
 			list = dao.selectAll();
 		}catch(Exception e) {
 			if(e instanceof SQLRecoverableException) {
-				throw new Exception("시스템 장애");
-			}else {
-				throw new Exception("조회 내용이 없습니다.");
+				throw new Exception("시스템 장애 입니다.");
 			}
 		}
-		
 		return list;
 	}
 
 }
+
+
+
+
+
