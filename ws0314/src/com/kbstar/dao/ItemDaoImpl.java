@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import com.kbstar.dto.Cust;
 import com.kbstar.dto.Item;
 import com.kbstar.frame.DAO;
 import com.kbstar.frame.Sql;
@@ -23,7 +22,7 @@ public class ItemDaoImpl implements DAO<String, String, Item>{
 			e.printStackTrace();
 			return;
 		}
-		System.out.println("Driver Loading 성공.");
+		//System.out.println("Driver Loading 성공.");
 	}
 
 	@Override
@@ -81,7 +80,7 @@ public class ItemDaoImpl implements DAO<String, String, Item>{
 	public Item select(String k) throws Exception {
 		Item item = null;
 		try(Connection con = getConnection(); 
-				PreparedStatement pstmt = con.prepareStatement(Sql.itemSelectSql)) {
+				PreparedStatement pstmt = con.prepareStatement(Sql.itemselectSql)) {
 			pstmt.setString(1, k);
 			
 			try(ResultSet rset = pstmt.executeQuery()) {
@@ -108,7 +107,7 @@ public class ItemDaoImpl implements DAO<String, String, Item>{
 	public List<Item> selectAll() throws Exception {
 		List<Item> list = new ArrayList<>();
 		try(Connection con = getConnection(); 
-				PreparedStatement pstmt = con.prepareStatement(Sql.itemSelectAllSql);) {
+				PreparedStatement pstmt = con.prepareStatement(Sql.itemselectAllSql);) {
 			try(ResultSet rset = pstmt.executeQuery();) {
 				while(rset.next()) {
 					Item item = null;
